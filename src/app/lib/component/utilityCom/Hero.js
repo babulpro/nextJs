@@ -1,6 +1,4 @@
- "use client"
-
-import { useEffect, useState } from 'react'
+ 
 import Image from 'next/image';
 import Link from 'next/link';
  
@@ -10,36 +8,8 @@ import Link from 'next/link';
  
  
 export default function Hero() {
-    
-    const [heroData, setHeroData] = useState([]);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchHeroData = async () => {
-            try {
-                const response = await fetch("/api/getData/hero",{cache:"force-cache"});
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                setHeroData(data.data); // Assuming the API sends `{ status: "ok", data: [...] }`
-            } catch (err) {
-                console.error("Error fetching hero data:", err);
-                setError(err.message);
-            }
-        };
-        
-
-        fetchHeroData();
-    }, []);
-
-    if (error) {
-        return <p>Error: {error}</p>;
-    }
-
-   
+  
+ 
  
   return (
        
@@ -61,13 +31,12 @@ export default function Hero() {
                 <div className=" text-center text-white shadow-xl flex justify-center items-center py-10">
                                
                                <div>
-                                 <h1 className="font-extrabold capitalize">{heroData.name}</h1>
-                                     <h2 className="capitalize ">{heroData.surName}</h2>
+                                 <h1 className="font-extrabold capitalize underline">Distance learning</h1>
+                                     <h2 className="capitalize  underline">Education Center</h2>
                                      <div className="mt-2 text-sm">
-                                            <p>{heroData.firstPara}
-                                            <br />{heroData.secondPara}
-                                            <br />
-                                            {heroData.thirdPara}
+                                            <p> Distance learning offers flexible education from any location,
+                                            <br />using online platforms for accessible,
+                                            <br />remote learning experiences.
                                             </p>
                                      </div>
                                      

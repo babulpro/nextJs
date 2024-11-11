@@ -7,7 +7,7 @@ export async function GET(req) {
 
     try {
         console.log("Fetching data...");
-        const heroes = await AboutData.find({});
+        const heroes = await AboutData.find();
         console.log("Data fetched:", heroes);
         return NextResponse.json({ status: "ok", data: heroes });
     } catch (error) {

@@ -7,7 +7,7 @@ import Register from './user/Register';
  
 
 
-const jorneyData=[
+const journeyData=[
     {
         name:"professional trainers",
         Des:"Expert-led guidance for real-world skills mastery",
@@ -62,14 +62,14 @@ const About = () => {
                 </div>
 
     
-                <div class="container m-auto my-14 ">
-                    <div class="grid lg:grid-cols-2 gap-3 w-4/5 m-auto">
+                <div className="container m-auto my-14 ">
+                    <div className="grid lg:grid-cols-2 gap-3 w-4/5 m-auto">
 
                     {
                                 AboutData.length>0 &&
                                 AboutData.map((value,index)=>{
                                     return(
-                                        <div class="rounded-lg shadow-xl bg-slate-700 text-slate-400">
+                                        <div key={index} className="rounded-lg shadow-xl bg-slate-700 text-slate-400">
                                                 <div className="flex flex-col p-3 py-10 lg:px-5">
                                                     <h1 className="w-10 h-10 p-2 text-center   rounded-full bg-slate-950 ">{index+1}</h1>
                                                     <h1 className="mt-3 text-xl capitalize underline">{value.name}</h1>
@@ -102,21 +102,21 @@ const About = () => {
 
 
                               {
-                                jorneyData.length>0 &&
-                                jorneyData.map((value,index)=>{
+                                journeyData.length>0 &&
+                                journeyData.map((value,index)=>{
                                     return(
-                                        <div className="flex justify-left mb-5 shadow-2xl py-5">
+                                        <div key={index} className="flex justify-left mb-5 shadow-2xl py-5">
 
                                     
-                                        <div className="mr-5 w-12 h-12 lg:mr-8 lg:w-20 lg:h-20 p-1 lg:p-2 "> 
-                                             <img className="rounded-full p-1" src={`${value.img}`} alt=""/>
-                                         </div>
+                                            <div className="mr-5 w-12 h-12 lg:mr-8 lg:w-20 lg:h-20 p-1 lg:p-2 "> 
+                                                <Image width={500} height={300} alt="png ImageS" className="rounded-full p-1" src={`/${value.img}`}/>
+                                            </div>
 
-                                         <div className="">
-                                             <h1 className="font-extrabold capitalize lg:text-xl">{value.name}</h1>
-                                             <p classNames="px-4 text-justify ">{value.Des}</p>
+                                            <div className="">
+                                                <h1 className="font-extrabold capitalize lg:text-xl">{value.name}</h1>
+                                                <p className="px-4 text-justify ">{value.Des}</p>
+                                            </div>
                                          </div>
-                             </div>
                                     )
                                 })
                               }
