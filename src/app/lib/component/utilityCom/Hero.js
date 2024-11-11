@@ -62,7 +62,7 @@ export default function Hero() {
                                
                                <div>
                                  <h1 className="font-extrabold capitalize">{heroData.name}</h1>
-                                     <h5 className="capitalize ">{heroData.surName}</h5>
+                                     <h2 className="capitalize ">{heroData.surName}</h2>
                                      <div className="mt-2 text-sm">
                                             <p>{heroData.firstPara}
                                             <br />{heroData.secondPara}
