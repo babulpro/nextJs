@@ -61,8 +61,8 @@ export default function Hero() {
                 <div className=" text-center text-white shadow-xl flex justify-center items-center py-10">
                                
                                <div>
-                                 <h1 className="text-2xl font-extrabold capitalize lg:text-3xl">{heroData.name}</h1>
-                                     <h5 className="text-xl capitalize ">{heroData.surName}</h5>
+                                 <h1 className="font-extrabold capitalize">{heroData.name}</h1>
+                                     <h5 className="capitalize ">{heroData.surName}</h5>
                                      <div className="mt-2 text-sm">
                                             <p>{heroData.firstPara}
                                             <br />{heroData.secondPara}
