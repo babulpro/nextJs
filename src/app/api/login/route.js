@@ -1,10 +1,11 @@
  
-import dbConnect from "@/app/lib/db";
-import User from "@/app/model/User";
-import { NextResponse } from "next/server";
-import bcrypt from 'bcrypt';
-import { CreateJwtToken } from "@/app/lib/authFunction/JwtHelper";
 import { cookies } from 'next/headers';
+
+import dbConnect from "@/app/lib/db/db";
+import User from "@/app/lib/db/model/User";
+import { NextResponse } from "next/server";
+import { bcrypt } from 'bcrypt';
+import { CreateJwtToken } from "@/app/lib/component/authFunction/JwtHelper";
 
 export async function POST(req, res) {
     const data = await req.json();
