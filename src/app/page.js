@@ -1,7 +1,11 @@
- "use client"
+ 
+
+import Hero from "./lib/component/utilityCom/Hero";
 
 export default function Home() {
   return (
-    <div>Hello babul</div>
+    <div>
+      <Hero/>
+    </div>
   );
 }

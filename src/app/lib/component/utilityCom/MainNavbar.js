@@ -83,7 +83,7 @@ const MainNavbar = () => {
                         </ul>
                         </div>
                         <Link href="/" className="btn btn-ghost text-xl p-2 ">
-                                <Image width={500} height={300} alt='profile image' src="/images/logo.jpg" className="w-16 h-8 rounded-xl" />
+                                <Image width={500} height={300} alt='profile image' src="next.svg" className="w-16 h-8 rounded-xl" />
                         </Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
