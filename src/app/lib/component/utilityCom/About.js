@@ -108,13 +108,13 @@ const About = () => {
                                         <div key={index} className="flex justify-left mb-5 shadow-2xl py-5">
 
                                     
-                                            <div className="mr-5 w-12 h-12 lg:mr-8 lg:w-20 lg:h-20 p-1 lg:p-2 "> 
+                                            <div className=" w-12 h-12 lg:mr-4 lg:w-20 lg:h-20 p-1 lg:p-2 "> 
                                                 <Image width={500} height={300} alt="png ImageS" className="rounded-full p-1" src={`/${value.img}`}/>
                                             </div>
 
-                                            <div className="">
+                                            <div className="px-2 ">
                                                 <h1 className="font-extrabold capitalize lg:text-xl">{value.name}</h1>
-                                                <p className="px-4 text-justify ">{value.Des}</p>
+                                                <p className="text-justify ">{value.Des}</p>
                                             </div>
                                          </div>
                                     )

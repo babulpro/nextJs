@@ -40,15 +40,15 @@ const Teacher = () => {
                         {Data.length > 0 && Data.slice(0, 4).map((value, index) => (
                             <div key={index} className="w-full text-center mt-11 p-4 shadow-2xl">
                                 <div>
-                                    <img
+                                    <Image width={500} height={300}
                                         className="p-2 m-0 h-[300px] w-full rounded-lg"
-                                        src={`./images/teacher/${value.img}`}
-                                        alt=""
+                                        src={`/teacher/${value.img}`}
+                                        alt="teacher image"
                                     />
                                 </div>
                                 <div key={3} className="grid gap-3 p-2">
                                     <div className="text-left">
-                                        <h1 className="pt-2 text-xl underline">Name: {value.name}</h1>
+                                        <h1 className="pt-2 text-xl underline">{value.name}</h1>
                                         <p className="text-sm">{value.des}</p>
                                     </div>
                                     <div>
@@ -59,7 +59,7 @@ const Teacher = () => {
                                                     className="inline-block w-7 h-7 p-1 bg-slate-700 rounded-full hover:bg-green-300"
                                                     target="_blank"
                                                 >
-                                                    <img src={`./images/social/${value.fImg}`} alt="Facebook"/>
+                                                    <Image width={500} height={300} src={`/social/${value.fImg}`} alt="Facebook"/>
                                                 </Link>
                                             </li>
                                             <li  >
@@ -68,7 +68,7 @@ const Teacher = () => {
                                                     className="inline-block w-7 h-7 p-1 bg-slate-700 rounded-full hover:bg-green-300"
                                                     target="_blank"
                                                 >
-                                                    <img src={`./images/social/linkedin.png`} alt="LinkedIn"/>
+                                                    <Image width={500} height={300} src={`/social/linkedin.png`} alt="LinkedIn"/>
                                                 </Link>
                                             </li>
                                             <li  >
@@ -77,7 +77,7 @@ const Teacher = () => {
                                                     className="inline-block w-7 h-7 p-1 bg-slate-700 rounded-full hover:bg-green-300"
                                                     target="_blank"
                                                 >
-                                                    <Image width={500} height={300} src={`./images/social/${value.tImg}`} alt="Twitter"/>
+                                                    <Image width={500} height={300} src={`/social/${value.tImg}`} alt="Twitter"/>
                                                 </Link>
                                             </li>
                                         </ul>
