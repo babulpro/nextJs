@@ -1,7 +1,9 @@
  
 
 import About from "./lib/component/utilityCom/About";
+import Courses from "./lib/component/utilityCom/Courses";
 import Hero from "./lib/component/utilityCom/Hero";
+import Review from "./lib/component/utilityCom/Review";
 import Teacher from "./lib/component/utilityCom/Teacher";
  
 
@@ -11,6 +13,9 @@ export default function Home() {
       <Hero/>
       <About/>
       <Teacher/>
+      <Courses/>
+      <Review/>
+      
        
       
     </div>

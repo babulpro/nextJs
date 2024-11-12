@@ -3,7 +3,7 @@
 @tailwind utilities;
  
 .inputForm{
-    @apply w-full text-center  my-2 mt-4 text-slate-300 py-1 px-2 rounded-xl  bg-slate-700
+    @apply w-4/5 lg:w-full text-center  my-2 mt-4 text-slate-300 py-1 px-2 rounded-xl  bg-slate-700
   }
   .inputClass{
     @apply w-full text-center  my-2 mt-4 text-slate-300 py-1 px-2 rounded-xl  bg-slate-700

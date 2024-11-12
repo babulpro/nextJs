@@ -41,9 +41,9 @@ const Register = () => {
   
 
     return (
-        <div className="items-center p-12 rounded-full justify bg-slate-600 lg:mr-2 w-80 h-80 ">
+        <div className="items-center lg:p-12 p:8 rounded-full justify bg-slate-600 lg:mr-2 w-64 h-64 lg:w-80 lg:h-80 ">
                                         <form onSubmit={HandleRegistrationSubmit} className="text-center">
-                                            <h1 className="font-bold text-center capitalize underline text-2xl ">signup today</h1>
+                                            <h1 className="font-bold text-center capitalize underline text-xl mt-4 lg:text-2xl lg:mt-0">signup today</h1>
                                             <input className="inputForm" type="text" name='name' value={data.name} placeholder="Name" onChange={(e)=>HandleChange(e.target.name,e.target.value)} required/>
                                             <input className="inputForm" type="email" name="email" value={data.email} placeholder="Email" onChange={(e)=>HandleChange(e.target.name,e.target.value)} required/>
                                             <input class="inputForm" type="password" value={data.password} placeholder="Password " name="password" onChange={(e)=>HandleChange(e.target.name,e.target.value)} required/>
