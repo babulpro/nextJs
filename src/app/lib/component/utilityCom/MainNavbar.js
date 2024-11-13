@@ -83,6 +83,7 @@ const MainNavbar = () => {
                         </ul>
                         </div>
                         
+                        
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
@@ -97,6 +98,7 @@ const MainNavbar = () => {
                          
                         </ul>
                     </div>
+                    
              
                      <div className="navbar-end flex-none gap-2">
                             <div className="form-control">
@@ -105,9 +107,13 @@ const MainNavbar = () => {
                             <div className="dropdown dropdown-end">
                             <div tabIndex="0" role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                <Image
+                                        src="/file.jpg"
+                                        alt="Logo Image"
+                                        width={300}
+                                        height={200}         
+                                               
+                                    />
                                 </div>
                             </div>
                             <ul

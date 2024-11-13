@@ -14,7 +14,7 @@ export default function Hero() {
   return (
        
 
-        <div className="container m-auto mb-14 bg-slate-800 py-10">
+        <div className="container m-auto bg-slate-800 py-10">
                 <div className='lg:w-4/5 m-auto p-3'>
                     <div className="grid lg:grid-cols-2 gap-5 min-h-1/2 ">
                             <div className="shadow-xl "> 
@@ -28,10 +28,10 @@ export default function Hero() {
 
                             </div>
                         
-                            <div className=" text-center text-white shadow-xl flex justify-center items-center py-10">
+                            <div className=" text-center text-slate-300 shadow-xl flex justify-center items-center py-10">
                                     
                                     <div>
-                                        <h1 className="font-extrabold capitalize underline">Distance learning</h1>
+                                        <h1 className="text-xl lg:text-2xl capitalize underline">Distance learning</h1>
                                             <h2 className="capitalize  underline">Education Center</h2>
                                             <div className="mt-2 text-sm">
                                                     <p> Distance learning offers flexible education from any location,

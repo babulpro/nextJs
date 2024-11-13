@@ -27,18 +27,17 @@ const Courses = () => {
     }, []);
 
     return (
-        <div>
-            <div className="mt-10">
+         
                 <div className="container m-auto bg-slate-800 py-10">
                     <div className="lg:w-4/5 m-auto bg-slate-800">
-                        <div className="shadow-xl">
+                        <div className="">
                             <div className="pt-6 text-center text-slate-300 capitalize pb-6">
                                 <h1 className="font-serif text-2xl underline font-bold">Popular Courses</h1>
                                 <p>Update your skills with the newest courses</p>
                             </div>
                         </div>
 
-                        <div className="grid lg:grid-cols-2 gap-3">
+                        <div className="grid lg:grid-cols-2 gap-3 px-2">
                             {error && <p className="text-red-500">{error}</p>}
                             {Data.length > 0 && Data.slice(1, 5).map((value, index) => (
                                 <div key={value._id } className="w-full text-center lg:mt-11 mt-4 lg:p-4 p-1 shadow-2xl">
@@ -68,8 +67,7 @@ const Courses = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+      
     );
 };
 

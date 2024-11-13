@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Contact = () => {
     return (
-        <div className="mt-10 ">
+        <div className="">
             <div className="container m-auto bg-slate-800 py-10">
                         <div className="w-4/5 m-auto bg-slate-800 underline ">
                             <div className="pt-6 text-center text-slate-300 capitalize pb-6">

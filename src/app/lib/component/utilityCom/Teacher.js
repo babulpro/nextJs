@@ -28,7 +28,7 @@ const Teacher = () => {
     }, []);
 
     return (
-        <div className="mt-10">
+        <div className="">
             <div className="container m-auto bg-slate-800">
                 <div className="lg:w-4/5 m-auto bg-slate-800 lg:py-10 py-2">
                     <div className="pt-6 text-center text-slate-300 capitalize lg:pb-6 pb-2">
@@ -51,7 +51,7 @@ const Teacher = () => {
                                 <div className="grid gap-3 p-2">
                                     <div className="text-left">
                                         <h1 className="pt-2 text-xl underline">{value.name}</h1>
-                                        <p className="text-sm">{value.des}</p>
+                                        <p className="">{value.des}</p>
                                     </div>
                                     <div>
                                         <ul className="flex justify-end gap-3 py-3 transition-all">

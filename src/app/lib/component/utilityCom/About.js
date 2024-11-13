@@ -50,13 +50,15 @@ const About = () => {
         fetchHeroData();
     }, []);
     return (
-        <div className="mt-10 ">
+        <div className="">
             <div className="container m-auto bg-slate-800 py-10 ">
             
-        
-                <div className="text-center text-slate-300 capitalize ">
-                    <h1 className="font-serif text-2xl font-bold underline">About Us</h1>
-                    <p>Explore All About Our Programme</p>
+                <div >
+
+                    <div className="text-center text-slate-300 capitalize ">
+                        <h1 className="font-serif text-2xl font-bold underline">About Us</h1>
+                        <p>Explore All About Our Programme</p>
+                    </div>
                 </div>
 
     
@@ -71,7 +73,7 @@ const About = () => {
                                                 <div className="flex flex-col p-3 py-10 lg:px-5">
                                                     <h1 className="w-10 h-10 p-2 text-center   rounded-full bg-slate-950 ">{index+1}</h1>
                                                     <h1 className="mt-3 text-xl capitalize underline">{value.name}</h1>
-                                                    <p className="mt-2 text-sm text-justify  lg:text-md">{value.shortDes}</p>
+                                                    <p className="mt-2 text-justify">{value.shortDes}</p>
                                                 </div>
                                          </div>
                                     )
