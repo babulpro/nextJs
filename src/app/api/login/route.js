@@ -16,35 +16,27 @@ export async function POST(req, res) {
     try {
         if (!email) {
             return NextResponse.json({ msg: "Invalid email" }, { status: 400 });
-        }
-
-        // Find user by email
+        } 
         const user = await User.findOne({ email });
 
         if (!user) {
             return NextResponse.json({ msg: "Invalid email or password", status: "false" }, { status: 404 });
         }
-
-        // Verify password
         const match = await bcrypt.compare(data.password, user.password);
 
         if (!match) {
             return NextResponse.json({ msg: "Invalid email or password", status: "false" }, { status: 404 });
         }
-
-        // Create JWT token
         const token = await CreateJwtToken(user.email);
-
-        // Set the token in an HTTP-only cookie
         const response = NextResponse.json({ msg: "Login successful", status: "ok" });
         response.cookies.set({
             name: 'token',
             value: token,
-            httpOnly: true,   // HTTP-only flag to prevent access from JavaScript
-            secure: true,  // Ensure secure cookies in production
-            sameSite: 'strict',  // Protect against CSRF attacks
-            path: '/',  // Cookie accessible throughout the application
-            maxAge: 60 * 60 * 24 * 7  // Valid for one week
+            httpOnly: true,   
+            secure: true,  
+            sameSite: 'strict', 
+            path: '/',  
+            maxAge: 60 * 60 * 24 * 7 
         });
 
         return response;

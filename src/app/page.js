@@ -1,6 +1,7 @@
  
 
 import About from "./lib/component/utilityCom/About";
+import Contact from "./lib/component/utilityCom/Contact";
 import Courses from "./lib/component/utilityCom/Courses";
 import Hero from "./lib/component/utilityCom/Hero";
 import Review from "./lib/component/utilityCom/Review";
@@ -15,6 +16,7 @@ export default function Home() {
       <Teacher/>
       <Courses/>
       <Review/>
+      <Contact/>
       
        
       

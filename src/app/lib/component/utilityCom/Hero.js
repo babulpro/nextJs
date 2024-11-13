@@ -19,7 +19,7 @@ export default function Hero() {
                     <div className="grid lg:grid-cols-2 gap-5 min-h-1/2 ">
                             <div className="shadow-xl "> 
                             <Image
-                                src={`/hero/hero.jpg`} alt="Hero Image"
+                                src={`/file.jpg`} alt="Hero Image"
                                 width={500}
                                 height={400}
                                 quality={100} 
