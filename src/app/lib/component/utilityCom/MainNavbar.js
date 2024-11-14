@@ -74,8 +74,8 @@ const MainNavbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                {Data.map((value, index) => {
                                 return (
-                                    <li key={value.id}>
-                                        <Link href={value.url}>{value.name}</Link>
+                                    <li key={value._id}>
+                                        <Link key={value._id} href={value.url}>{value.name}</Link>
                                     </li>
                                 );
                             })}
@@ -89,8 +89,8 @@ const MainNavbar = () => {
                         <ul className="menu menu-horizontal px-1">
                         {Data.map((value, index) => {
                                 return (
-                                    <li key={value.id}>
-                                        <Link href={value.url}>{value.name}</Link>
+                                    <li key={value._id}>
+                                        <Link key={value._id} href={value.url}>{value.name}</Link>
                                     </li>
                                 );
                             })

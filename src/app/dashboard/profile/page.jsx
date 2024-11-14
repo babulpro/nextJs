@@ -37,14 +37,14 @@ export default function Page(){
         }
          
         try{
-            const config = {method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}
+            const config = {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}
             let response  = await fetch("/api/User",config,{cache:"force-cache"})
             let json = await response.json()
            
              
             if(json['status'] =="ok"){
                 
-                router.replace("/dashboard")
+                router.replace("/dashboard/pages/about")
             }
             else{
                 alert(json['msg'])
@@ -60,9 +60,9 @@ export default function Page(){
             <div className="w-1/2 auto p-8 m-auto shadow-2xl">
                     <form onSubmit={FormSubmitHandler}>
                          
-                        <label for="mobile">Enter Your Mobile Number</label><br/>
+                        <label htmlFor="mobile">Enter Your Mobile Number</label><br/>
                         <input type='text' placeholder='+019......' value={data.email} name="mobile" onChange={(e)=>InputChange(e.target.name,e.target.value)} className="inputClass" id="mobile"/> <br/><br/>
-                        <label for="city">Enter Your City</label><br/>
+                        <label htmlFor="city">Enter Your City</label><br/>
                         <input type='text' placeholder='Dhaka' value={data.city} name="city" onChange={(e)=>InputChange(e.target.name,e.target.value)} className="inputClass" id="city"/> <br/><br/>
                         <label for="post">Enter Your Post</label><br/>
                         <input type="text" placeholder="mohakhli" value={data.post} name="post" onChange={(e)=>InputChange(e.target.name,e.target.value)} className="inputClass" id="post"/> <br/>

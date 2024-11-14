@@ -1,13 +1,24 @@
+"use client"
+
 import getData from '@/app/lib/component/ServerCom/getData';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
  
 
 
 
-const Page = async() => {
+const Page = () => {
  
-             let data= await getData("about")
-             
+           
+             const [data, setData] = useState([]);
+
+             useEffect(() => {
+                 (async () => {
+                     const data = await getData("about");
+                     setData(data); 
+                 })()
+         
+               
+             }, []);        
      
 
     return (

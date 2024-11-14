@@ -1,12 +1,21 @@
- 
-import React from 'react';
+ "use client"
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import getData from '@/app/lib/component/ServerCom/getData';
 import Link from 'next/link';
  
-const Page = async() => {
+const Page = () => {
     
-    let Data = await getData("teacher")
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const data = await getData("teacher");
+            setData(data); 
+        })()
+
+      
+    }, []);
  
 
     return (
@@ -22,7 +31,7 @@ const Page = async() => {
     
                 <div className="grid lg:grid-cols-2 gap-3 ">
                    {
-                        Data.length>0 && Data.map((value,index)=>{
+                        data.length>0 && data.map((value,index)=>{
                             return(
                                 <div key={index} className="w-full text-center mt-11 p-4 shadow-2xl">
                                             <div className="">

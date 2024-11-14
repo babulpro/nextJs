@@ -1,27 +1,20 @@
 "use client"
  
+import getData from '@/app/lib/component/ServerCom/getData';
 import React, { useEffect, useState } from 'react';
 
-const myData = async () => {
-    try {
-        let res = await fetch("/api/getData/review");
-        let data = await res.json();
-        return data.data;
-    } catch (e) {
-        console.log(e);
-    }
-};
+
 
 const Page =() => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const data = await myData();
-            setReviews(data); // Set the fetched reviews to the state
-        };
+        (async () => {
+            const data = await getData("review");
+            setReviews(data); 
+        })()
 
-        fetchData();
+      
     }, []);
 
     return (

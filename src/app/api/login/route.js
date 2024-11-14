@@ -4,25 +4,28 @@ import { cookies } from 'next/headers';
 import dbConnect from "@/app/lib/db/db";
 import User from "@/app/lib/db/model/User";
 import { NextResponse } from "next/server";
-import { bcrypt } from 'bcrypt';
+import  bcrypt  from 'bcrypt';
 import { CreateJwtToken } from "@/app/lib/component/authFunction/JwtHelper";
 
 export async function POST(req, res) {
     const data = await req.json();
+    
     const email = data.email;
 
-    await dbConnect(); // Ensure DB connection
+    await dbConnect(); 
 
     try {
         if (!email) {
             return NextResponse.json({ msg: "Invalid email" }, { status: 400 });
         } 
         const user = await User.findOne({ email });
+        
 
         if (!user) {
             return NextResponse.json({ msg: "Invalid email or password", status: "false" }, { status: 404 });
         }
         const match = await bcrypt.compare(data.password, user.password);
+        console.log(match)
 
         if (!match) {
             return NextResponse.json({ msg: "Invalid email or password", status: "false" }, { status: 404 });
@@ -46,9 +49,12 @@ export async function POST(req, res) {
     }
 }
 
+
+
 export async function GET(req) {
     cookies().delete('token')
     return NextResponse.json({
         msg:"request Completed",status:"ok"
-    })    
+    })   
+      
 }
