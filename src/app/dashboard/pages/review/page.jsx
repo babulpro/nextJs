@@ -1,20 +1,26 @@
 "use client"
- 
-import getData from '@/app/lib/component/ServerCom/getData';
 import React, { useEffect, useState } from 'react';
 
+const myData = async () => {
+    try {
+        let res = await fetch("/api/getData/review");
+        let data = await res.json();
+        return data.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
 
-
-const Page =() => {
+const Review = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        (async () => {
-            const data = await getData("review");
-            setReviews(data); 
-        })()
+        const fetchData = async () => {
+            const data = await myData();
+            setReviews(data); // Set the fetched reviews to the state
+        };
 
-      
+        fetchData();
     }, []);
 
     return (
@@ -40,7 +46,7 @@ const Page =() => {
                                 </div>
                             ))
                         ) : (
-                            <p>Loadding..............</p>
+                            <p>loadding .............</p>
                         )}
                     </div>
                 </div>
@@ -49,4 +55,4 @@ const Page =() => {
     );
 };
 
-export default Page;
+export default Review;
