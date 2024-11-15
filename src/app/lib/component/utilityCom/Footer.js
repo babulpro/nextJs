@@ -1,7 +1,56 @@
- import React from 'react';
+ 'use client'
+ import React, { useState } from 'react';
  import Link from 'next/link'
  
  const Footer = () => {
+    const initValue={email:""}
+    
+    
+    const [data,setData]=useState({...initValue})
+    
+    
+
+    const InputChange =(name,value)=>{
+        setData(pre=>({
+            ...pre,
+            [name]:value
+        }))
+    }
+
+    
+    const FormSubmitHandler = async (e) => {
+        e.preventDefault();   
+         
+            try {
+                const config = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                };
+    
+                const response = await fetch("/api/getData/news", config, { cache: "no-cache" });
+    
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+    
+                const json = await response.json();
+    
+                if (json.status === "ok") {
+                    
+                    alert("Thank You for NewsLetter")
+                    setData(initValue)
+                     
+                }
+            } catch (error) {
+                alert("Already Registered")
+            }
+        }
+    
+    
+
     return (
          <div className="container m-auto bg-slate-800  ">
             <div className="lg:w-4/5 m-auto py-10 shadow-2xl px-5">
@@ -24,9 +73,9 @@
         
                 <div className="flex flex-col col-span-2 mt-6 ">
                     <h1 className="font-extrabold mb-3 ">Newsletter Signup</h1>
-                    <form className="shadow-2xl py-10 px-5">
-                        <input type="email" className="w-full px-2 py-2 bg-slate-600 text-slate-200 rounded-xl text-center outline-none"  placeholder="Email" />
-                        <input type="submit" value="Registrtion" className="w-full  px-2 py-1 hover:text-slate-600 mt-3 text-center rounded-xl  bg-slate-700"/>
+                    <form onSubmit={FormSubmitHandler} className="shadow-2xl py-10 px-5">
+                        <input type="email" onChange={(e)=>InputChange("email",e.target.value)} className="w-full px-2 py-2 bg-slate-600 text-slate-200 rounded-xl text-center outline-none"  placeholder="Email" />
+                        <input type="submit" value="Registrtion"  className="w-full  px-2 py-1 hover:text-slate-600 mt-3 text-center rounded-xl  bg-slate-700"/>
                          
                     </form>
                     
