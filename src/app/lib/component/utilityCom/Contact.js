@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
  
 
 const Contact = () => {
@@ -41,12 +42,11 @@ const Contact = () => {
                 const json = await response.json();
     
                 if (json.status === "ok") {
-                    
-                    alert("Thank you for your Query")
+                    toast.success('Thank you for your Query')
                     setData(initValue)
                 }
             } catch (error) {
-                alert("An error occurred: " + error.message);
+                toast.error("Pending your query.")
             }
         }
  

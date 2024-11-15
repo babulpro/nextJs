@@ -1,6 +1,7 @@
 "use client"
  
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 // import HandleRegistrationSubmit from './Post';
 
@@ -26,10 +27,10 @@ const Register = () => {
             let json = await response.json();
             if (json.status === "ok") {
                 setData({...initData})
-                alert("Congrtulation!!")
+                toast.success('You Have Register Successfully !')
                 
             } else {
-                alert(json.msg);
+                toast.error("Already Used The Email")
             }
         }
         catch(e){

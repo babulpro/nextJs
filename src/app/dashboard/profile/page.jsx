@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import {useRouter} from 'next/navigation'
+import toast from "react-hot-toast"
 
 
 
@@ -43,21 +44,22 @@ export default function Page(){
            
              
             if(json['status'] =="ok"){
-                
+                toast.success('Successfully Updated!')
                 router.replace("/dashboard/pages/about")
             }
             else{
-                alert(json['msg'])
+                toast.error('Login First!')
             }
         }
         catch(e){
-            throw new Error("Something went wrong")
+            toast.error('Login First!')
+
         }
     }
  
     return(
-        <div className="w-full  min-h-1/2 items">
-            <div className="w-1/2 auto p-8 m-auto shadow-2xl">
+        <div className="container m-auto">
+            <div className="w-4/5 auto lg:p-8  p-3 m-auto shadow-2xl">
                     <form onSubmit={FormSubmitHandler}>
                          
                         <label htmlFor="mobile">Enter Your Mobile Number</label><br/>
@@ -68,8 +70,8 @@ export default function Page(){
                         <input type="text" placeholder="mohakhli" value={data.post} name="post" onChange={(e)=>InputChange(e.target.name,e.target.value)} className="inputClass" id="post"/> <br/>
                         <label for="street">Enter Your street</label><br/>
                         <input type="text" placeholder="3/4 lake " value={data.street} name="street" onChange={(e)=>InputChange(e.target.name,e.target.value)} className="inputClass" id="street"/> <br/>
-                        <div className=" md:w-2/3 m-auto md:flex md:justify-between mt-8 ">
-                         <input type='submit' value='Update' className="px-3 py-1 hover:text-slate-500 "/><br/>
+                        <div className="mt-8 ">
+                         <input type='submit' value='Update' className="p-1  hover:text-slate-500 "/><br/>
                          
                          
                         </div>

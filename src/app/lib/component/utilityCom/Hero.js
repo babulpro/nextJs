@@ -14,12 +14,12 @@ export default function Hero() {
   return (
        
 
-        <div className="container m-auto bg-slate-800 py-10">
-                <div className='lg:w-4/5 m-auto p-3'>
+        <div className="container m-auto bg-slate-800 py-10 ">
+                <div className='lg:w-4/5 m-auto p-3 '>
                     <div className="grid lg:grid-cols-2 gap-5 min-h-1/2 ">
-                            <div className="shadow-xl "> 
+                            <div className="shadow-xl motion-translate-x-in-[-200%] motion-translate-y-in-[-13%] motion-duration-[2s]/translate motion-delay-[0.00s]/translate" > 
                             <Image
-                                src={`/file.jpg`} alt="Hero Image"
+                                src={`/hero/hero.jpg`} alt="Hero Image"
                                 width={500}
                                 height={400}
                                 quality={100} 
@@ -28,7 +28,7 @@ export default function Hero() {
 
                             </div>
                         
-                            <div className=" text-center text-slate-300 shadow-xl flex justify-center items-center py-10">
+                            <div className=" text-center text-slate-300 shadow-xl flex justify-center items-center py-10 motion-translate-x-in-[200%] motion-translate-y-in-[-2%] motion-duration-[2s]/translate motion-delay-[0.00s]/translate">
                                     
                                     <div>
                                         <h1 className="text-xl lg:text-2xl capitalize underline">Distance learning</h1>

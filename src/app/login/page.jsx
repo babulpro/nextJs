@@ -3,6 +3,7 @@
 import {  useState } from "react"
 import {useRouter} from 'next/navigation'
 import Link from 'next/link'
+import toast from "react-hot-toast"
 
 
 export default function Page(){
@@ -50,13 +51,14 @@ export default function Page(){
     
                 if (json.status === "ok") {
                     
-                    alert("login success")
+                    toast.success('Wellcome To Home of Knowledge')
                     window.location.replace("/")
                 } else {
-                    router.replace("/login");
+                    toast.error("Please provide valid email and password");
                 }
             } catch (error) {
-                alert("An error occurred: " + error.message);
+                toast.error("Please provide valid email and password");
+
             }
         }
     };
@@ -71,10 +73,10 @@ export default function Page(){
                             <input type='email' placeholder='email' value={data.email} onChange={(e)=>InputChange("email",e.target.value)} className="inputClass text-left" id="email"/> <br/><br/>
                             <label for="password">Enter Your Password</label><br/>
                             <input type="password" placeholder="********" value={data.password} onChange={(e)=>InputChange("password",e.target.value)} className="inputClass" id="password"/> <br/>
-                            <div className=" md:w-2/3 m-auto md:flex md:justify-between mt-8 ">
-                            <input type='submit' value='login' className="px-3 py-1 hover:text-slate-500 hover:animate-bounce "/><br/>
-                            <Link href="/login/registration" className="text-xs px-3 py-1 hover:text-slate-500 shadow-2xl">Don't have account?</Link>
-                            <Link href="/login/forgetpassword" className="text-xs px-3 py-1 hover:text-slate-500 shadow-2xl">Forget password?</Link>
+                            <div className="mt-8 ">
+                            <input type='submit' value='login' className="p-1 hover:text-slate-500 hover:animate-bounce "/><br/>
+                            <Link href="/login/registration" className="text-xs p-1 hover:text-slate-500 shadow-2xl">Don't have account?</Link>
+                            <Link href="/login/forgetpassword" className="text-xs p-1 hover:text-slate-500 shadow-2xl">Forget password?</Link>
                             </div>
                         </form>
                 </div>

@@ -1,6 +1,7 @@
  'use client'
  import React, { useState } from 'react';
  import Link from 'next/link'
+import toast from 'react-hot-toast';
  
  const Footer = () => {
     const initValue={email:""}
@@ -39,13 +40,12 @@
                 const json = await response.json();
     
                 if (json.status === "ok") {
-                    
-                    alert("Thank You for NewsLetter")
+                    toast.success('Thank You for NewsLetter!')
                     setData(initValue)
                      
                 }
             } catch (error) {
-                alert("Already Registered")
+                toast.error("Already Registered")
             }
         }
     
