@@ -50,7 +50,7 @@ const About = () => {
         fetchHeroData();
     }, []);
     return (
-        <div className="">
+        <div className="font-Geist">
             <div className="container m-auto bg-slate-800 py-10 ">
             
                 <div >
@@ -69,11 +69,11 @@ const About = () => {
                                 AboutData.length>0 &&
                                 AboutData.slice(0,4).map((value,index)=>{
                                     return(
-                                        <div key={index} className="rounded-lg shadow-xl bg-slate-700 text-slate-400">
+                                        <div key={index} className="rounded-lg shadow-xl bg-slate-700 text-slate-400 ">
                                                 <div className="flex flex-col p-3 py-10 lg:px-5">
                                                     <h1 className="w-10 h-10 p-2 text-center   rounded-full bg-slate-950 ">{index+1}</h1>
                                                     <h1 className="mt-3 text-xl capitalize underline">{value.name}</h1>
-                                                    <p className="mt-2 text-justify">{value.shortDes}</p>
+                                                    <p className="mt-2 ">{value.shortDes}</p>
                                                 </div>
                                          </div>
                                     )

@@ -28,7 +28,7 @@ const Teacher = () => {
     }, []);
 
     return (
-        <div className="">
+        <div className=" font-Geist">
             <div className="container m-auto bg-slate-800">
                 <div className="lg:w-4/5 m-auto bg-slate-800 lg:py-10 py-2">
                     <div className="pt-6 text-center text-slate-300 capitalize lg:pb-6 pb-2">

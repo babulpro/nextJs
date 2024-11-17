@@ -13,4 +13,6 @@
     @apply flex justify-center place-items-center
   }
   
+  @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
   

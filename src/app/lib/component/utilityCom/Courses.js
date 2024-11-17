@@ -28,7 +28,7 @@ const Courses = () => {
 
     return (
          
-                <div className="container m-auto bg-slate-800 py-10">
+                <div className="container font-Noto m-auto bg-slate-800 py-10">
                     <div className="lg:w-4/5 m-auto bg-slate-800">
                         <div className="">
                             <div className="pt-6 text-center text-slate-300 capitalize pb-6">

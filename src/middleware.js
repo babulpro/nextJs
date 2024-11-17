@@ -1,6 +1,7 @@
  
 import { NextResponse } from "next/server"
 import { CheckCookies } from "./app/lib/component/authFunction/CheckMiddleware"
+import { clerkMiddleware } from "@clerk/nextjs/server";
  
  
     export   function middleware(req,res,next){
@@ -12,11 +13,18 @@ import { CheckCookies } from "./app/lib/component/authFunction/CheckMiddleware"
             
     }
 
+export default clerkMiddleware();
 
-    export const config={
-        matcher:['/dashboard/pages/:path*']
-    }
+export const config = {
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)','/dashboard/pages/:path*'
+  ],
+};
 
+ 
 
 
 

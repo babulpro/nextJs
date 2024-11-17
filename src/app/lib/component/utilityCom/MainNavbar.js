@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
  
+ 
 
 const MainNavbar = () => {
     let router = useRouter()
@@ -54,7 +55,7 @@ const MainNavbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100 fixed top-0 z-50 motion-translate-x-in-[200%] motion-translate-y-in-[200%] motion-duration-[3s]/translate motion-delay-[0.00s]/translate ">
+            <div className="navbar bg-base-100 fixed top-0 z-50">
                     <div className="navbar-start">
                         <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -132,13 +133,14 @@ const MainNavbar = () => {
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                 <li>
                                 <Link href="/dashboard/profile" className="justify-between">
-                                    Profile
+                                   Update
                                      
                                 </Link>
                                 </li>
-                               <li> <button onClick={logIn}>LogIn</button> </li>                       
-                               <li><button onClick={logOut}>LogOut</button> </li>
-                                <li><a>Settings</a></li>
+                               <li> <button onClick={logIn}>Log In</button> </li>                       
+                               <li><button onClick={logOut}>Log Out</button> </li>
+                                <li><Link href="/">Settings</Link></li>
+                                
                             </ul>
                             </div>
                      </div>
