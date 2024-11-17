@@ -1,57 +1,66 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 
-const myData = async () => {
+const fetchReviews = async () => {
     try {
-        let res = await fetch("/api/getData/review");
-        let data = await res.json();
+        const res = await fetch("/api/getData/review");
+        if (!res.ok) throw new Error("Failed to fetch reviews");
+        const data = await res.json();
         return data.data;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.error("Error fetching reviews:", error);
+        return [];
     }
 };
 
 const Review = () => {
     const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await myData();
-            setReviews(data); // Set the fetched reviews to the state
+            const data = await fetchReviews();
+            setReviews(data || []);
+            setLoading(false);
         };
 
         fetchData();
     }, []);
 
     return (
-        <div >
-            <div className="container m-auto bg-slate-800 py-10">
-                <div className="w-4/5 m-auto">
-                    <div className="">
-                        <div className="pt-6 text-center text-slate-300 capitalize pb-6">
-                            <h1 className="font-serif text-2xl underline font-bold">Student Reviews</h1>
-                            <p>From around the world</p>
-                        </div>
-                    </div>
+        <section className="bg-slate-800 py-10">
+            <div className="container mx-auto px-6">
+                <header className="text-center text-slate-300 capitalize pb-6">
+                    <h1 className="font-serif text-3xl underline font-bold">Student Reviews</h1>
+                    <p className="text-sm">Voices from around the world</p>
+                </header>
 
-                    <div className="grid lg:grid-cols-2 gap-3">
-                        {reviews.length > 0 ? (
-                            reviews.slice(0,4).map((value, index) => (
-                                <div key={index} className="w-full text-center lg:mt-11 mt-4 lg:p-4 p-1 shadow-2xl">
-                                    <div className="text-left">
-                                        <h1 className="pt-2 underline">{index + 1}. {value.name}</h1>
-                                        <p className=''>{value.des}</p>
-                                        <p className="text-xs italic"> {value.date}</p>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <p>No reviews available</p>
-                        )}
+                {loading ? (
+                    <div className="text-center text-slate-400 py-6">
+                        <p>Loading reviews...</p>
                     </div>
-                </div>
+                ) : reviews.length > 0 ? (
+                    <div className="grid lg:grid-cols-2 gap-6">
+                        {reviews.slice(0, 4).map((review, index) => (
+                            <div
+                                key={index}
+                                className="bg-white text-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
+                            >
+                                <h2 className="font-bold text-lg mb-2 underline">
+                                    {index + 1}. {review.name}
+                                </h2>
+                                <p className="text-sm mb-4">{review.des}</p>
+                                <p className="text-xs italic text-gray-500">{review.date}</p>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="text-center text-slate-400 py-6">
+                        <p>No reviews available</p>
+                    </div>
+                )}
             </div>
-        </div>
+        </section>
     );
 };
 
