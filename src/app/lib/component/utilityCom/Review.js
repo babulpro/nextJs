@@ -36,7 +36,7 @@ const Review = () => {
                 </header>
 
                 {loading ? (
-                    <div className="text-center text-slate-400 py-6">
+                    <div className="text-center text-slate-200 py-6">
                         <p>Loading reviews...</p>
                     </div>
                 ) : reviews.length > 0 ? (
@@ -44,7 +44,7 @@ const Review = () => {
                         {reviews.slice(0, 4).map((review, index) => (
                             <div
                                 key={index}
-                                className="bg-white text-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
+                                className="bg-slate-700 text-slate-300 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
                             >
                                 <h2 className="font-bold text-lg mb-2 underline">
                                     {index + 1}. {review.name}
