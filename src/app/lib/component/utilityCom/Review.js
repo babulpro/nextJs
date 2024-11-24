@@ -28,8 +28,8 @@ const Review = () => {
     }, []);
 
     return (
-        <section className="bg-slate-800 py-10">
-            <div className="container mx-auto px-6">
+        <div className="container m-auto py-20">
+            <div className=" bg-slate-800 mx-auto p-6">
                 <header className="text-center text-slate-300 capitalize pb-6">
                     <h1 className="font-serif text-3xl underline font-bold">Student Reviews</h1>
                     <p className="text-sm">Voices from around the world</p>
@@ -60,7 +60,7 @@ const Review = () => {
                     </div>
                 )}
             </div>
-        </section>
+        </div>
     );
 };
 

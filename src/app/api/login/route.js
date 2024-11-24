@@ -24,12 +24,13 @@ export async function POST(req, res) {
         if (!user) {
             return NextResponse.json({ msg: "Invalid email or password", status: "false" }, { status: 404 });
         }
+
         const match = await bcrypt.compare(data.password, user.password);
-        console.log(match)
 
         if (!match) {
             return NextResponse.json({ msg: "Invalid email or password", status: "false" }, { status: 404 });
         }
+        
         const token = await CreateJwtToken(user.email);
         const response = NextResponse.json({ msg: "Login successful", status: "ok" });
         response.cookies.set({
